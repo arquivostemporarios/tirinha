@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    
+    <form id="more-access-bankline-operator" name="banklineCodOperador" method="POST"> 
+        <label>Ambiente</label>
+        <p>
+            <select id="selectOption">
+                <option value="">Selecione uma opção...</option>
+                <option value="https://internet4.itau.com.br/router-app/router">Varejo AZA</option>
+                <option value="https://internet5.itau.com.br/router-app/router">Varejo AZB</option>
+                <option value="https://internet6.itau.com.br/router-app/router">Varejo AZC</option>
+                <option value="https://internet3.itau.com.br/router-app/router">Varejo VIA</option>
+                <option value="https://internetempresas4.itau.com.br/router-app/router">Atacado AZA</option>
+                <option value="https://internetempresas5.itau.com.br/router-app/router">Atacado AZB</option>
+                <option value="https://internetempresas6.itau.com.br/router-app/router">Atacado AZC</option>
+                <option value="https://internetempresas3.itau.com.br/router-app/router">Atacado VIA</option>
+            </select>
+        </p>
+        <label>Operador</label>
+        <input type="text" name="usuario.operador" id="operador" value="" label="operador" required> 
+        <input type="hidden" name="portal" value="001"> <input type="hidden" name="pre-login" value="pre-login"> 
+        <input type="hidden" name="pre-login-flow" value="logon-partnet-internet-pj"> 
+        <input type="hidden" name="tipoLogon" value="8"> 
+        <input type="hidden" id="destino" name="destino" value="" class="autotab">
+        <button type="submit">Logar</button>
+    </form>
+
+    <script>
+        // Captura o elemento select e o formulário
+        var selectElement = document.getElementById('selectOption');
+        var formElement = document.getElementById('more-access-bankline-operator');
+    
+        // Adiciona um ouvinte de evento de mudança ao elemento select
+        selectElement.addEventListener('change', function() {
+            // Obtem o valor selecionado
+            var selectedValue = selectElement.value;
+            
+            // Define a ação do formulário para o valor selecionado
+            formElement.action = selectedValue;
+        });
+    </script>
+
+</body>
+</html>
